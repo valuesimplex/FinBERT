@@ -37,7 +37,7 @@ FinBERT 1.0 所采用的预训练语料主要包含三大类金融领域的语�
 ## 2.3. 预训练方式
 **预训练框架图**
 
-![image](https://github.com/valuesimplex/FinBERT/blob/master/pics/method.png)
+![image](https://github.com/valuesimplex/FinBERT/blob/main/pics/method.png)
 
 如上图所示，FinBERT 采用了两大类预训练任务，分别是字词级别的预训练和任务级别的预训练。两类预训练任务的细节详述如下：
 
@@ -102,7 +102,7 @@ XLA 全称为加速线性运算，如果在 Tensorflow 中开启了 XLA，那么
 
 该任务的数据集共包含 3000 条样本，其中训练集数据约 1100 条，测试集数据约 1900条，各类别分布情况如下：
 
-![image](https://github.com/valuesimplex/FinBERT/blob/master/pics/classification_data.png)
+![image](https://github.com/valuesimplex/FinBERT/blob/main/pics/classification_data.png)
 
 ### 3.1.3. 实验结果
 TASK\MODEL     | BERT | BERT-wwm | RoBERTa-wwm-ext | FinBERT 
@@ -119,7 +119,7 @@ TASK\MODEL     | BERT | BERT-wwm | RoBERTa-wwm-ext | FinBERT
 该任务的数据集共包含 1200 条样本，其中训练集数据约 400 条，测试集数据约 800条。训练集中的各类别数目在 5~15 条之间，属于典型的小样本任务。
 各类别分布情况如下：
 
-![image](https://github.com/valuesimplex/FinBERT/blob/master/pics/report_data.png)
+![image](https://github.com/valuesimplex/FinBERT/blob/main/pics/report_data.png)
 
 
 ### 3.2.3. 实验结果
@@ -138,7 +138,7 @@ TASK\MODEL      | BERT | BERT-wwm | RoBERTa-wwm-ext | FinBERT
 ### 3.3.2. 数据集
 该任务的数据集共包含 2000 条样本，其中训练集数据约 1300 条，测试集数据约 700条，各类别分布情况如下：
 
-![image](https://github.com/valuesimplex/FinBERT/blob/master/pics/sentiment_data.png)
+![image](https://github.com/valuesimplex/FinBERT/blob/main/pics/sentiment_data.png)
 
 ### 3.3.3. 实验结果
 
