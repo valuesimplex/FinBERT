@@ -8,15 +8,21 @@
 
 **模型下载地址：**    
 
-- **[TensorFlow版](https://pan.baidu.com/s/16tDXNU4z9UXK-ELK72Jv3w)** （密码：714y）
+- **[tensorflow版下载（百度云密码：714y）](https://pan.baidu.com/s/16tDXNU4z9UXK-ELK72Jv3w)**
 
-- **[PyTorch版](https://pan.baidu.com/s/1jjMRvkam3efyDfY6mb5MCA)** （密码：cckk）
+- **[pytorch版下载（百度云密码：cckk）](https://pan.baidu.com/s/1jjMRvkam3efyDfY6mb5MCA)**
+
+- **[tensorflow版下载（Google Drive）](https://drive.google.com/file/d/1VGGr4z1cK3Xeczka7UWzrtbc_RCUiwET/view?usp=sharing)**
+
+- **[pytorch版下载（Google Drive）](https://drive.google.com/file/d/1hJQ2_bJWoGwOwSUDxK4dCalwkqN_qtl0/view?usp=sharing)**
+
 
 **使用方式：** 与 Google 发布的原生 BERT 使用方式一致，直接替换相应路径即可。不同深度学习框架的使用方式可参考如下项目：
 
 - **[TensorFlow 版本参考这里](https://github.com/google-research/bert)**
 
 - **[PyTorch 版本参考这里](https://github.com/huggingface/transformers)**
+
 
 **注：** 我们的 PyTorch 版本模型是通过 TensorFlow 下的模型转换而来，具体转换代码可以 
 **[参考这里](https://github.com/huggingface/transformers/blob/master/src/transformers/convert_bert_original_tf_checkpoint_to_pytorch.py)**
