@@ -8,13 +8,13 @@
 
 **模型下载地址：**    
 
-- **[tensorflow版下载（百度云密码：714y）](https://pan.baidu.com/s/16tDXNU4z9UXK-ELK72Jv3w)**
+- **[tensorflow版下载（百度云密码：1cmp）](https://pan.baidu.com/s/1D-pVJyW6bbJSre5RxotJkA)**
 
-- **[pytorch版下载（百度云密码：cckk）](https://pan.baidu.com/s/1jjMRvkam3efyDfY6mb5MCA)**
+- **[pytorch版下载（百度云密码：986f）](https://pan.baidu.com/s/1y_O586GBmZZ7g4d2nOF0Vg)**
 
-- **[tensorflow版下载（Google Drive）](https://drive.google.com/file/d/1VGGr4z1cK3Xeczka7UWzrtbc_RCUiwET/view?usp=sharing)**
+- **[tensorflow版下载（Google Drive）](https://drive.google.com/file/d/193B4sT63mMeh4zfge0FJbbFY447KiJXp/view?usp=sharing)**
 
-- **[pytorch版下载（Google Drive）](https://drive.google.com/file/d/1hJQ2_bJWoGwOwSUDxK4dCalwkqN_qtl0/view?usp=sharing)**
+- **[pytorch版下载（Google Drive）](https://drive.google.com/file/d/1qW1YWtw3q9Q28QThrIY-rDU9Gl-SLIKO/view?usp=sharing)**
 
 
 **使用方式：** 与 Google 发布的原生 BERT 使用方式一致，直接替换相应路径即可。不同深度学习框架的使用方式可参考如下项目：
