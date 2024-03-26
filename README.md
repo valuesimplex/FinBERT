@@ -8,9 +8,9 @@
 
 **模型下载地址：**    
 
-- **[tensorflow版下载（百度云密码：1cmp）](https://pan.baidu.com/s/1D-pVJyW6bbJSre5RxotJkA)**
+- **[tensorflow版下载（百度云密码：1cmp）](https://pan.baidu.com/s/1xkZEuK9EnMtY1pQjc5tziw)**
 
-- **[pytorch版下载（百度云密码：986f）](https://pan.baidu.com/s/1y_O586GBmZZ7g4d2nOF0Vg)**
+- **[pytorch版下载（百度云密码：986f）](https://pan.baidu.com/s/17XI3b1OZgeiJR_IQjVIfkA)**
 
 - **[tensorflow版下载（Google Drive）](https://drive.google.com/file/d/1nzEARr-RgHlsVoKc7letVzDbkhxVwsEj/view?usp=sharing)**
 
