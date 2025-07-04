@@ -1,7 +1,7 @@
-[FinBERT1](README.md) | [FinBERT2](https://github.com/FinBERT2/README.md) 
+[FinBERT1](README.md) | [FinBERT2](https://github.com/valuesimplex/FinBERT2/README.md) 
 
 
-## FinBERT2简介
+# FinBERT2简介
 
 我们引入了FinBERT2，一种专门的双向编码器，它在一个高质量的32B token金融特定语料库上进行了预训练，这可能是该size模型下最大的中文金融预训练语料库。作为一个更好的小型基础模型，FinBERT2可以通过以下方面弥合LLM在金融特定部署方面的差距：
 
@@ -22,7 +22,7 @@ FinBERT2-Suits 是熵简科技基于丰富的金融领域数据开发的面向�
 -除了sequence/token classification在内的分类任务 (Fin-labeler) 我们还涵盖适用于密集检索任务 (Fin-retriever)和主题建模任务 (Fin-topicmodel)。  
 
 
-## FinBERT1 README
+# README of FinBERT1
 
 # 1. 背景及下载地址
 
