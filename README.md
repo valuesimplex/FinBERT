@@ -1,4 +1,4 @@
-[FinBERT1](README.md) | [FinBERT2](https://github.com/valuesimplex/FinBERT2/README.md) 
+[FinBERT1](README.md) | [FinBERT2](https://github.com/valuesimplex/FinBERT2) 
 
 
 # FinBERT2简介
@@ -10,7 +10,6 @@
 2. **卓越的检索能力**：在五个金融检索任务中，对比微调模型(Fin-Retrievers)既优于开源模型(例如，比BGE-base-zh+6.8%的平均值改进)，又优于部分商业模型(例如，比OpenAI的文本嵌入-3-large嵌入器+4.2%的平均值改进)。
 
 3. **改进的主题建模**：在FinBERT2变体的基础上，我们构建了Fin-TopicModel，该模型为金融研报标题短文本提供了更高质量的聚类和主题表示。
-![projects](./imgs/overview.png)
 
 ## 相比FinBERT1的升级
 FinBERT2-Suits 是熵简科技基于丰富的金融领域数据开发的面向中文金融文本处理定制的BERTs套件，在金融文本分类、检索、主题建模上拥有更好的性能。相比四年前熵简科技发布的[FinBERT1](https://github.com/valuesimplex/FinBERT)，我们有如下升级：
