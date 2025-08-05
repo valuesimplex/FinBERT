@@ -35,7 +35,7 @@ valuesimplex/FinBERT2/LICENSE">
 
 ## 背景
 
-本次开源的 FinBERT2 是熵简科技开源模型 FinBERT （于 2020年开源）的第二代升级模型。FinBERT2 在 320亿+ Token 的高质量中文金融语料进行深度预训练，旨在提升大语言模型（LLMs）在金融领域应用部署中的表现。
+本次开源的 FinBERT2 是熵简科技开源模型 [FinBERT](https://github.com/valuesimplex/FinBERT/blob/main/FinBERT1_README.md) （于2020年开源）的第二代升级模型。FinBERT2 在 320亿+ Token 的高质量中文金融语料进行深度预训练，旨在提升大语言模型（LLMs）在金融领域应用部署中的表现。
 
 本次开源工作包含了预训练模型 FinBERT2、应用于特定下游任务的微调模型及相关数据集，以支持更多金融科技领域的创新研究与应用实践，并与社区伙伴共同推动金融AI生态的繁荣发展。
 

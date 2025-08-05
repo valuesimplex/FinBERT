@@ -1,27 +1,3 @@
-[FinBERT1](README.md) | [FinBERT2](https://github.com/valuesimplex/FinBERT2) 
-
-
-# FinBERT2简介
-
-我们引入了FinBERT2，一种专门的双向编码器，它在一个高质量的32B token金融特定语料库上进行了预训练，这可能是该size模型下最大的中文金融预训练语料库。作为一个更好的小型基础模型，FinBERT2可以通过以下方面弥合LLM在金融特定部署方面的差距：
-
-1. **优越的分类性能**：在五个金融分类任务中，辨别性微调模型(Fin-Labelers)比其他(Fin)BERT变体平均优于0.4%-3.3%，领先LLM平均9.7%-12.3%。
-
-2. **卓越的检索能力**：在五个金融检索任务中，对比微调模型(Fin-Retrievers)既优于开源模型(例如，比BGE-base-zh+6.8%的平均值改进)，又优于部分商业模型(例如，比OpenAI的文本嵌入-3-large嵌入器+4.2%的平均值改进)。
-
-3. **改进的主题建模**：在FinBERT2变体的基础上，我们构建了Fin-TopicModel，该模型为金融研报标题短文本提供了更高质量的聚类和主题表示。
-
-## 相比FinBERT1的升级
-FinBERT2-Suits 是熵简科技基于丰富的金融领域数据开发的面向中文金融文本处理定制的BERTs套件，在金融文本分类、检索、主题建模上拥有更好的性能。相比四年前熵简科技发布的[FinBERT1](https://github.com/valuesimplex/FinBERT)，我们有如下升级：
-###  🧱更丰富的金融领域数据集
-- 包含研报、新闻、公告等种类的丰富的领域无监督语料和各种领域下游任务数据集
-###  🏆深度预训练的基座模型
-- 分词器(Fin-tokenizer)和基座模型(FinBERT2)在32B金融文本语料上预训练
-### 🌐 更多样的下游微调和适配
--除了sequence/token classification在内的分类任务 (Fin-labeler) 我们还涵盖适用于密集检索任务 (Fin-retriever)和主题建模任务 (Fin-topicmodel)。  
-
-
-# README of FinBERT1
 
 # 1. 背景及下载地址
 
