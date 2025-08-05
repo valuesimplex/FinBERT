@@ -23,7 +23,7 @@ valuesimplex/FinBERT2/LICENSE">
     <p>
 </h4>
 
-[FinBERT2-中文](README.md)  |  [FinBERT2-English](https://github.com/valuesimplex/FinBERT2/blob/main/README_en.md) |  [FinBERT1](https://github.com/valuesimplex/FinBERT/blob/main/FinBERT1_README.md)
+[FinBERT2-中文](README.md)  |  [FinBERT2-English](README_en.md) |  [FinBERT1](https://github.com/valuesimplex/FinBERT/blob/main/FinBERT1_README.md)
 
 
 ![projects](./pics/projects.svg)

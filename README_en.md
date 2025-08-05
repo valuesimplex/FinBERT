@@ -21,10 +21,10 @@
     <p>
 </h4>
 
-[中文](README.md)  |  [English](https://github.com/valuesimplex/FinBERT2/blob/main/README_en.md) 
+[中文](README.md)  |  [English](README_en.md) 
 
 
-![projects](./imgs/projects.svg)
+![projects](./pics/projects.svg)
 
 🌟Paper🌟: https://dl.acm.org/doi/10.1145/3711896.3737219
 
@@ -39,7 +39,7 @@ This open-source work includes the pre-trained model FinBERT2, fine-tuned models
 
 ## FinBERT2 Introduction
 
-![projects](./imgs/overview.png)
+![projects](./pics/overview.png)
 
 FinBERT2 can bridge the gap in LLM deployment in finance-specific scenarios through the following aspects:
 
