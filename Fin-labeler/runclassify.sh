@@ -1,0 +1,1 @@
+ CUDA_VISIBLE_DEVICES=0 torchrun --nproc_per_node 1 --master-port 29500 finetune_sentiment_classification.py --model_name "valuesimplex-ai-lab/FinBERT2-base"

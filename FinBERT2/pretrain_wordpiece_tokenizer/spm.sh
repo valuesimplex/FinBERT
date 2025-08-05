@@ -1,0 +1,1 @@
+spm_export_vocab --model="unigram_all.model" --output=""

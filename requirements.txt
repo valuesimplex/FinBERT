@@ -1,0 +1,16 @@
+torch>=2.0.0
+transformers>=4.40.0
+datasets>=2.20.0
+sentence-transformers>=3.0.0
+numpy>=1.24.0
+scikit-learn>=1.3.0
+pandas>=2.0.0
+jieba>=0.42.0
+sentencepiece>=0.1.99
+bertopic>=0.16.0
+umap-learn>=0.5.0
+hdbscan>=0.8.0
+tqdm>=4.65.0
+accelerate>=0.20.0
+matplotlib>=3.5.0
+seaborn>=0.11.0

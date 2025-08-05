@@ -1,0 +1,2 @@
+experimentname,currentsteps,accuracy,precision,recall,f1
+FinBERT2-base_SC_2,10,0.46,0.6611451861424524,0.46,0.3994514501891551
