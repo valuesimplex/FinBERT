@@ -118,34 +118,142 @@ Refer to the [FlagEmbedding](https://github.com/FlagOpen/FlagEmbedding/tree/mast
 
 ```
 from sentence_transformers import SentenceTransformer
+import numpy as np
 
-# Load Fin-Retrievers model
+# Load the Fin-Retrievers model.
 model = SentenceTransformer('valuesimplex-ai-lab/fin-retriever-base')
 
-# Prepare query and documents
-query = "科技股近期波动原因"
+# Set the original query
+query = "美联储加息对科技股的影响"
+
+# Key step: Add a prompt to the query to ensure consistency with the model's training
+optimized_query = "为这个句子生成表示以用于检索相关文章：" + query
+
+# Build a document list (including structured information such as title, organization, author, etc.)
 documents = [
-    "美联储加息预期引发纳斯达克指数下跌",  
-    "半导体行业供应过剩导致股价回调",     
-    "银行板块受益于利率上升" 
+    {
+        "title": "美联储加息对科技股估值影响分析",
+        "company": "",  
+        "institution": "摩根士丹利",
+        "industry": "科技综合",
+        "author": "张伟",
+        "type": "策略报告",
+        "content": "2023年美联储连续加息导致科技股估值大幅回调，特别是高成长性科技公司。历史数据显示，利率每上升25个基点，科技板块平均下跌3.5%。FAANG股票受冲击最明显，其中Meta和Netflix估值压缩幅度最大。"
+    },
+    {
+        "title": "美联储加息对全球资产配置的影响",
+        "company": "",  
+        "institution": "瑞银",
+        "industry": "宏观经济",
+        "author": "李强",
+        "type": "宏观研究",
+        "content": "本文系统分析美联储加息对全球股债汇市的影响，科技股作为权益资产的一部分，其波动在本文中被纳入整体市场分析框架。报告特别关注了新兴市场货币波动和商品价格变化，科技股仅占分析篇幅的15%。"
+    },
+    {
+        "title": "中国科技股监管政策变化及投资机会",
+        "company": "腾讯控股", 
+        "institution": "中金公司",
+        "industry": "互联网",
+        "author": "陈明",
+        "type": "行业研究",
+        "content": "中国科技板块近期受监管政策放松驱动上涨，本文聚焦国内政策变化对互联网公司的影响，包括游戏版号发放、平台经济监管等。报告详细分析了腾讯、阿里巴巴和美团的监管风险变化，未讨论美联储货币政策影响。"
+    },
+    {
+        "title": "加息周期中银行股的投资价值分析",
+        "company": "招商银行", 
+        "institution": "中信证券",
+        "industry": "银行",
+        "author": "赵静",
+        "type": "行业深度",
+        "content": "美联储加息显著改善银行净息差，本文测算国内上市银行净利息收入将提升8-12%。重点分析了招商银行、工商银行和中国银行的受益程度。科技股作为对比板块简要提及，指出其融资成本上升的压力。"
+    },
+    {
+        "title": "生猪养殖行业周期反转信号分析",
+        "company": "牧原股份",  
+        "institution": "长江证券",
+        "industry": "农林牧渔",
+        "author": "刘洋",
+        "type": "行业报告",
+        "content": "能繁母猪存栏量连续三个月下降，预示猪周期即将反转。我们预计2024年生猪价格将上涨40%，牧原股份、温氏股份和新希望等龙头养殖企业盈利改善空间显著。报告未涉及科技股或货币政策。"
+    },
+    {
+        "title": "光伏产业链价格走势及技术迭代分析",
+        "company": "隆基绿能",  
+        "institution": "国金证券",
+        "industry": "电力设备",
+        "author": "杨光",
+        "type": "产业链研究",
+        "content": "硅料价格降至100元/kg以下，刺激下游装机需求。TOPCon电池量产效率突破25.5%，隆基绿能、通威股份和晶科能源技术领先。报告分析光伏行业供需格局，与科技股和货币政策无直接关联。"
+    },
+    {
+        "title": "美债收益率上升对科技股ETF的影响",
+        "company": "", 
+        "institution": "华泰证券",
+        "industry": "金融产品",
+        "author": "周涛",
+        "type": "基金研究",
+        "content": "分析10年期美债收益率上升对科技行业ETF(如XLK、QQQ)的影响机制。报告指出利率上升1%将导致科技ETF估值下降10-15%，但未讨论具体科技公司基本面变化。重点比较了不同ETF产品的久期和利率敏感性。"
+    }
 ]
 
-# Key Step: Add a retrieval prefix to the query
-optimized_query = '为这个句子生成表示以用于检索相关文章：' + query 
+# Define document type labels (used for displaying positive and negative example tags)
+doc_types = {
+    0: "正例",
+    1: "难负例",
+    2: "难负例",
+    3: "难负例",
+    4: "随机负例",
+    5: "随机负例",
+    6: "难负例"
+}
 
-# Combine all texts (query + documents)
-all_texts = [optimized_query] + documents
+# Format the documents into structured text to enhance the model's understanding
+formatted_docs = []
+for doc in documents:
+    text = (
+        f"文章标题：{doc['title']}\n"
+        f"公司名称：{doc['company']}\n"
+        f"发布机构：{doc['institution']}\n"
+        f"行业：{doc['industry']}\n"
+        f"作者：{doc['author']}\n"
+        f"{doc['type']}：{doc['content']}"
+    )
+    formatted_docs.append(text)
 
-# Generate embeddings for all texts
+# Concatenate the query and all documents as a single input
+all_texts = [optimized_query] + formatted_docs
+
+# Generate sentence embeddings (the first one is the query embedding, followed by document embeddings)
 embeddings = model.encode(all_texts)
 
-# Separate query vector and document vectors
+# Split the query embedding and the document embeddings
 query_vector = embeddings[0]
 doc_vectors = embeddings[1:]
 
-# Calculate similarity scores
+# Compute dot product similarity (can be used as an alternative to cosine similarity)
 scores = query_vector @ doc_vectors.T
-print("Document matching scores:", scores)
+
+# Output the query content
+print("【查询】:", query)
+print("【文档匹配分数】:")
+
+# Sort all documents by score (from highest to lowest)
+sorted_indices = np.argsort(scores)[::-1]
+
+# Output each document's score, label, and key information in sequence
+for idx in sorted_indices:
+    doc = documents[idx]
+    print(f"分数: {scores[idx]:.4f} | 类型: {doc_types[idx]} | 标题: {doc['title']} | 机构: {doc['institution']},内容: {doc['content'][:60]}...")
+
+【查询】: 美联储加息对科技股的影响
+# 【文档匹配分数】:
+# 分数: 0.9015 | 类型: 正例 | 标题: 美联储加息对科技股估值影响分析 | 机构: 摩根士丹利 | 内容: 2023年美联储连续加息导致科技股估值大幅回调，特别是高成长...
+# 分数: 0.8482 | 类型: 难负例 | 标题: 美联储加息对全球资产配置的影响 | 机构: 瑞银 | 内容: 本文系统分析美联储加息对全球股债汇市的影响，科技股作为权益资...
+# 分数: 0.8167 | 类型: 难负例 | 标题: 美债收益率上升对科技股ETF的影响 | 机构: 华泰证券 | 内容: 分析10年期美债收益率上升对科技行业ETF(如XLK、QQQ...
+# 分数: 0.7839 | 类型: 难负例 | 标题: 加息周期中银行股的投资价值分析 | 机构: 中信证券 | 内容: 美联储加息显著改善银行净息差，本文测算国内上市银行净利息收入...
+# 分数: 0.7562 | 类型: 难负例 | 标题: 中国科技股监管政策变化及投资机会 | 机构: 中金公司 | 内容: 中国科技板块近期受监管政策放松驱动上涨，本文聚焦国内政策变化...
+# 分数: 0.6164 | 类型: 随机负例 | 标题: 光伏产业链价格走势及技术迭代分析 | 机构: 国金证券 | 内容: 硅料价格降至100元/kg以下，刺激下游装机需求。TOPCo...
+# 分数: 0.6151 | 类型: 随机负例 | 标题: 生猪养殖行业周期反转信号分析 | 机构: 长江证券 | 内容: 能繁母猪存栏量连续三个月下降，预示猪周期即将反转。我们预计2...
 ```
 
 
