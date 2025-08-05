@@ -56,12 +56,12 @@ FinBERT2 可以通过以下方面弥合LLM在金融特定场景部署方面的�
 # 安装
 ### 1. clone项目源码
 ```
-git clone https://github.com/valuesimplex/FinBERT2.git
+git clone https://github.com/valuesimplex/FinBERT.git
 ```
 ### 2. 创建虚拟环境
 ```bash
-conda create --name FinBERT2 python=3.11
-conda activate FinBERT2
+conda create --name FinBERT python=3.11
+conda activate FinBERT
 ```
 
 ### 3. 安装依赖
@@ -281,8 +281,9 @@ for idx in sorted_indices:
 
 ## 更新
 - 2月/2025：创建 FinBERT2 github 项目
-- 5月/2025：FinBET2 论文被 KDD 2025 ADS(applied data science) track 录用
+- 5月/2025：FinBERT2 论文被 KDD 2025 ADS(applied data science) track 录用
 - 6月/2025：更新FinBERT2 github项目
+- 8月/2025：正式发布FinBERT2 github项目
 
 ## Reference:
 我们的套件基于下列开源项目开发，关于更多细节，可以参考原仓库：
