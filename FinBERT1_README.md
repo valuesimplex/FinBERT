@@ -16,6 +16,8 @@
 - **[tensorflow版下载（Google Drive）](https://drive.google.com/file/d/1nzEARr-RgHlsVoKc7letVzDbkhxVwsEj/view?usp=sharing)**
 
 - **[pytorch版下载（Google Drive）](https://drive.google.com/file/d/1qW1YWtw3q9Q28QThrIY-rDU9Gl-SLIKO/view?usp=sharing)**
+  
+- **[pytorch版下载（Hugging Face）](https://huggingface.co/valuesimplex-ai-lab/FinBERT1-base)**
 
 
 **使用方式：** 与 Google 发布的原生 BERT 使用方式一致，直接替换相应路径即可。不同深度学习框架的使用方式可参考如下项目：
